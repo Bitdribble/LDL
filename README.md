@@ -138,3 +138,15 @@ copy the file `captions_train2014.json` to the directory `coco`.
 Download the following 13 GB file: http://images.cocodataset.org/zips/train2014.zip.
 Unzip it into the `data/coco/` directory so the path to the unzipped directory is
 `data/coco/train2014/`.
+
+
+### Andrei's additions
+* To run the Jupyter notebooks on Colab, add the following to the top of your Jupyter notebook:
+```
+!rm -rf LDL
+!git clone https://github.com/Bitdribble/LDL.git
+%cd /content/LDL
+%pip install -r colab_requirements.txt
+%cd /content/LDL/<subfolder>
+
+```
