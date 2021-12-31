@@ -12,7 +12,7 @@ if [[ $(docker ps --filter name=$DOCKER_NAME -aq) ]]; then
 fi
 
 # Create a brand new instance, but don't make it interactive yet
-docker run -it --name $DOCKER_NAME -v ~/build:/build $DOCKER_IMAGE
+docker run -it --name $DOCKER_NAME -v ~/build:/build -w /build $DOCKER_IMAGE
 # Install emacs
 docker exec $DOCKER_NAME "apt update; apt install -y emacs"
 
