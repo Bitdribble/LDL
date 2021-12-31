@@ -113,12 +113,8 @@ def train_model(model, device, epochs, batch_size, trainset, testset,
             return_value = [train_mae, test_mae]
     return return_value
 
-from torch.utils.data import DataLoader
-import pandas as pd
-
-
 def train_model_w_df(model, device, epochs, batch_size, trainset, testset,
-                     optimizer, loss_function, metric) -> pd.DataFrame:
+                     optimizer, loss_function, metric) -> list, pd.DataFrame:
     """
     Same as above, but return a dataframe 
     of loss, acc, mae, val_loss, val_acc, val_mae by epoch
@@ -221,4 +217,6 @@ def train_model_w_df(model, device, epochs, batch_size, trainset, testset,
 
             loss_df.loc[i] = [i+1, train_loss, 0, train_mae, test_loss, 0, test_mae]
 
-    return loss_df
+        return_value = [train_mae, test_mae]
+
+    return return_value, loss_df
