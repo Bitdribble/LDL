@@ -217,6 +217,4 @@ def train_model_w_df(model, device, epochs, batch_size, trainset, testset,
 
             loss_df.loc[i] = [i+1, train_loss, 0, train_mae, test_loss, 0, test_mae]
 
-        return_value = [train_mae, test_mae]
-
-    return return_value, loss_df
+    return loss_df
