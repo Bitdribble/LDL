@@ -23,6 +23,9 @@ if [[ $(docker ps --filter name=$DOCKER_CONTAINER_NAME -aq) ]]; then
 fi
 
 # Create a new instance, but keep it detached (-d)
+# - nvidia-container-toolkit and nvidia-docker2 must be installed on host side
+# - NVIDIA env variables, --gpus, --runtime=nvidia are needed for CUDA
+# - /tmp/.X11-unix volume mapping is needed for X
 docker run \
   -d \
   -e DISPLAY=$DISPLAY \
@@ -35,6 +38,7 @@ docker run \
   --name $DOCKER_CONTAINER_NAME \
   --runtime=nvidia \
   -v ~/build:/build \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -w $WORKING_DIR \
   $DOCKER_IMAGE
 
