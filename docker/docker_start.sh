@@ -29,7 +29,11 @@ docker run \
   --name $DOCKER_CONTAINER_NAME \
   -v ~/build:/build \
   -w $WORKING_DIR \
+  --runtime=nvidia \
+  --gpus all \
   -e DISPLAY=$DISPLAY \
+  -e NVIDIA_VISIBLE_DEVICES=all \
+  -e NVIDIA_DRIVER_CAPABILITIES=all \
   -e PYTHONPATH=$WORKING_DIR \
   --hostname $DOCKER_HOSTNAME \
   $DOCKER_IMAGE

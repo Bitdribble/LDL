@@ -6,6 +6,7 @@ RUN apt-get update; apt-get install -y \
     apt-utils \
     curl \
     emacs \
+    git \
     iputils-ping \
     htop \
     lsof \
