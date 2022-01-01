@@ -10,7 +10,7 @@ GRP=$(id -g -n)
 GRP_ID=$(id -g)
 
 # Ensure a default display
-if [[ -z ${DISPLAY} ]];then
+if [[ -z ${DISPLAY} ]]; then
   DISPLAY=":0"
 fi
 
