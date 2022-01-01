@@ -24,18 +24,18 @@ fi
 
 # Create a new instance, but keep it detached (-d)
 docker run \
-  -it \
   -d \
-  --name $DOCKER_CONTAINER_NAME \
-  -v ~/build:/build \
-  -w $WORKING_DIR \
-  --runtime=nvidia \
-  --gpus all \
   -e DISPLAY=$DISPLAY \
   -e NVIDIA_VISIBLE_DEVICES=all \
   -e NVIDIA_DRIVER_CAPABILITIES=all \
   -e PYTHONPATH=$WORKING_DIR \
+  --gpus all \
   --hostname $DOCKER_HOSTNAME \
+  -it \
+  --name $DOCKER_CONTAINER_NAME \
+  --runtime=nvidia \
+  -v ~/build:/build \
+  -w $WORKING_DIR \
   $DOCKER_IMAGE
 
 # Set up user and group
