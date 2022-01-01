@@ -156,5 +156,6 @@ setuptools
 
 # Andrei's additions
 altair==4.2.0
+jupyterlab==3.2.5
 pandas==1.3.5
 vega-datasets==0.9.0

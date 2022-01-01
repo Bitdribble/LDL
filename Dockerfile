@@ -2,13 +2,23 @@ FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update; apt install -y \
+RUN apt-get update; apt-get install -y \
+    apt-utils \
+    curl \
     emacs \
+    iputils-ping \
+    htop \
+    lsof \
+    net-tools \
     pip \
+    psmisc \
     python3 \
     sudo \
+    traceroute \
     tzdata \
-    vim
+    vim \
+    wget \
+    zip
 
 # Torch is large, pip runs out of memory w/o --no-cache-dir
 # so preinstall torch

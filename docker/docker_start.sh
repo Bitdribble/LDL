@@ -17,5 +17,6 @@ docker run -it \
        --name $DOCKER_NAME \
        -v ~/build:/build \
        -w $WORKING_DIR \
-       --env PYTHONPATH=$WORKING_DIR \
+       -e DISPLAY=:0 \
+       -e PYTHONPATH=$WORKING_DIR \
        $DOCKER_IMAGE
