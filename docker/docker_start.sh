@@ -24,21 +24,22 @@ fi
 
 # Create a new instance, but keep it detached (-d)
 docker run \
-       -it \
-       -d \
-       --name $DOCKER_CONTAINER_NAME \
-       -v ~/build:/build \
-       -w $WORKING_DIR \
-       -e DISPLAY=$DISPLAY \
-       -e PYTHONPATH=$WORKING_DIR \
-       --hostname $DOCKER_HOSTNAME \
-       $DOCKER_IMAGE
+  -it \
+  -d \
+  --name $DOCKER_CONTAINER_NAME \
+  -v ~/build:/build \
+  -w $WORKING_DIR \
+  -e DISPLAY=$DISPLAY \
+  -e PYTHONPATH=$WORKING_DIR \
+  --hostname $DOCKER_HOSTNAME \
+  $DOCKER_IMAGE
 
 # Set up user and group
 if [[ "${USER}" != "root" ]]; then
   docker exec $DOCKER_CONTAINER_NAME addgroup --force-badname --gid "${GRP_ID}" "${GRP}" >/dev/null
   docker exec $DOCKER_CONTAINER_NAME adduser --force-badname --disabled-password --gecos '' $USER --uid $USER_ID --gid $GRP_ID >/dev/null
   docker exec $DOCKER_CONTAINER_NAME usermod -aG sudo $USER >/dev/null
+  docker exec $DOCKER_CONTAINER_NAME bash -c "echo '%sudo ALL=(ALL) NOPASSWD:ALL' >>/etc/sudoers"
 fi
 
 # Allow X connections
@@ -46,12 +47,12 @@ xhost +local:root 1>/dev/null 2>&1
 
 # Attach to the instance
 docker exec \
-       -e DISPLAY=$DISPLAY \
-       -it \
-       --privileged \
-       -u $USER \
-       $DOCKER_CONTAINER_NAME \
-       /bin/bash
+  -e DISPLAY=$DISPLAY \
+  -it \
+  --privileged \
+  -u $USER \
+  $DOCKER_CONTAINER_NAME \
+  /bin/bash
 
 # Disallow X connections
 xhost -local:root 1>/dev/null 2>&1
