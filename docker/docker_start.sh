@@ -16,5 +16,5 @@ docker run -it \
        --name $DOCKER_NAME \
        -v ~/build:/build \
        -w /build \
-       -e PYTHONPATH=/build/lse \
+       -e PYTHONPATH=/build/LSE \
        $DOCKER_IMAGE
