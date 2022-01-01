@@ -114,7 +114,7 @@ def train_model(model, device, epochs, batch_size, trainset, testset,
     return return_value
 
 def train_model_w_df(model, device, epochs, batch_size, trainset, testset,
-                     optimizer, loss_function, metric) -> list, pd.DataFrame:
+                     optimizer, loss_function, metric) -> pd.DataFrame:
     """
     Same as above, but return a dataframe 
     of loss, acc, mae, val_loss, val_acc, val_mae by epoch
