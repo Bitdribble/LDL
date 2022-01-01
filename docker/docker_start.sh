@@ -26,6 +26,7 @@ fi
 # - nvidia-container-toolkit and nvidia-docker2 must be installed on host side
 # - NVIDIA env variables, --gpus, --runtime=nvidia are needed for CUDA
 # - /tmp/.X11-unix volume mapping is needed for X
+# - --net host is needed to open jupyter notebooks from inside container
 docker run \
   -d \
   -e DISPLAY=$DISPLAY \
@@ -36,6 +37,7 @@ docker run \
   --hostname $DOCKER_HOSTNAME \
   -it \
   --name $DOCKER_CONTAINER_NAME \
+  --net host \
   --runtime=nvidia \
   -v ~/build:/build \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
