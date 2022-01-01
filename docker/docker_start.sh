@@ -40,6 +40,7 @@ docker run \
   --net host \
   --runtime=nvidia \
   -v ~/build:/build \
+  -v /home/$USER:/home/$USER \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -w $WORKING_DIR \
   $DOCKER_IMAGE
