@@ -27,7 +27,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import TensorDataset, DataLoader
 import numpy as np
-from pt_framework.utilities import train_model
+from pt_framework.utilities import train_model_df
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 EPOCHS = 500
@@ -80,8 +80,8 @@ optimizer = torch.optim.Adam(model.parameters())
 loss_function = nn.MSELoss()
 
 # Train model.
-train_model(model, device, EPOCHS, BATCH_SIZE, trainset, testset,
-            optimizer, loss_function, 'mae')
+return_value = train_model_df(model, device, EPOCHS, BATCH_SIZE, trainset, testset,
+                              optimizer, loss_function, 'mae')
 
 # Print first 4 predictions.
 inputs = torch.from_numpy(x_test)

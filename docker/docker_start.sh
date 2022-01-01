@@ -2,7 +2,7 @@
 
 DOCKER_NAME=ldl
 DOCKER_IMAGE=ldl
-WORKING_DIR=/build/LSE
+WORKING_DIR=/build/LDL
 
 # Is an instance already running?
 if [[ $(docker ps --filter name=$DOCKER_NAME -aq) ]]; then

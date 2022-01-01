@@ -113,8 +113,8 @@ def train_model(model, device, epochs, batch_size, trainset, testset,
             return_value = [train_mae, test_mae]
     return return_value
 
-def train_model_w_df(model, device, epochs, batch_size, trainset, testset,
-                     optimizer, loss_function, metric) -> pd.DataFrame:
+def train_model_df(model, device, epochs, batch_size, trainset, testset,
+                   optimizer, loss_function, metric) -> dict:
     """
     Same as above, but return a dataframe 
     of loss, acc, mae, val_loss, val_acc, val_mae by epoch
@@ -124,6 +124,8 @@ def train_model_w_df(model, device, epochs, batch_size, trainset, testset,
     0   1      544.08   0    20.7423  451.118   0        17.8312
     1   2      393.174  0    17.4213  286.009   0        13.5104
     """
+
+    return_value = dict()
     
     # Transfer model to GPU.
     model.to(device)
@@ -206,15 +208,33 @@ def train_model_w_df(model, device, epochs, batch_size, trainset, testset,
             test_batches +=  1
             test_loss += loss.item()
         test_loss = test_loss / test_batches
+
+        # Update return value
+        return_value["train_loss"] =  train_loss
+        return_value["val_loss"] = test_loss
+
         if(acc):
             test_acc = test_correct / (test_batches * batch_size)
             print(f'Epoch {i+1}/{epochs} loss: {train_loss:.4f} - acc: {train_acc:0.4f} - val_loss: {test_loss:.4f} - val_acc: {test_acc:0.4f}')
-            return_value = [train_acc, test_acc]
+
+            # Fill in dataframe
+            loss_df.loc[i] = [i+1, train_loss, train_acc, 0, test_loss, test_acc, 0]
+
+            # Update return value
+            return_value["train_acc"] =  train_acc
+            return_value["val_acc"] = test_acc
         if(mae):
             test_mae = test_absolute_error / (test_batches * batch_size)
             print(f'Epoch {i+1}/{epochs} loss: {train_loss:.4f} - mae: {train_mae:0.4f} - val_loss: {test_loss:.4f} - val_mae: {test_mae:0.4f}')
-            return_value = [train_mae, test_mae]
 
+            # Update return value
+            return_value["train_mae"] = train_mae
+            return_value["val_mae"] = test_mae
+
+            # Fill in dataframe
             loss_df.loc[i] = [i+1, train_loss, 0, train_mae, test_loss, 0, test_mae]
+        
+        # Update return value
+        return_value["df"] = loss_df
 
-    return loss_df
+    return return_value
