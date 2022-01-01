@@ -2,6 +2,7 @@
 
 DOCKER_NAME=ldl
 DOCKER_IMAGE=ldl
+WORKING_DIR=/build/LSE
 
 # Is an instance already running?
 if [[ $(docker ps --filter name=$DOCKER_NAME -aq) ]]; then
@@ -15,6 +16,6 @@ fi
 docker run -it \
        --name $DOCKER_NAME \
        -v ~/build:/build \
-       -w /build \
-       -e PYTHONPATH=/build/LSE \
+       -w $WORKING_DIR \
+       --env PYTHONPATH=$WORKING_DIR \
        $DOCKER_IMAGE
