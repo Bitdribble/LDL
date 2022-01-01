@@ -14,7 +14,7 @@ if [[ -z ${DISPLAY} ]];then
   DISPLAY=":0"
 fi
 
-# Is an instance already running?
+# Is the instance already running?
 if [[ $(docker ps --filter name=$DOCKER_CONTAINER_NAME -aq) ]]; then
   # Open a shell on that instance
   docker start $DOCKER_CONTAINER_NAME >/dev/null 2>&1
