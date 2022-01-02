@@ -132,8 +132,47 @@ Epoch 23/128 loss: 0.2850 - acc: 0.9006 - val_loss: 1.1244 - val_acc: 0.7007
 Epoch 24/128 loss: 0.2770 - acc: 0.9029 - val_loss: 1.0324 - val_acc: 0.7118
 ```
 
-Add L2 weight decay `1e-2`
+Add L2 weight decay `1e-2` - too much. Best L2 weight decay is `1e-3`.
 ```
 Epoch 6/128 loss: 1.0240 - acc: 0.6411 - val_loss: 1.0313 - val_acc: 0.6299
 Epoch 7/128 loss: 1.0029 - acc: 0.6486 - val_loss: 1.0089 - val_acc: 0.6446
+Epoch 117/128 loss: 0.9004 - acc: 0.6891 - val_loss: 0.9161 - val_acc: 0.6866
+Epoch 118/128 loss: 0.8976 - acc: 0.6894 - val_loss: 0.9510 - val_acc: 0.6744
+```
+
+### Experiment 5
+
+No L2 loss, droout of `0.1`.
+
+```
+----------------------------------------------------------------
+        Layer (type)               Output Shape         Param #
+================================================================
+            Conv2d-1           [-1, 64, 32, 32]           1,792
+              ReLU-2           [-1, 64, 32, 32]               0
+         MaxPool2d-3           [-1, 64, 16, 16]               0
+           Dropout-4           [-1, 64, 16, 16]               0
+            Conv2d-5           [-1, 64, 16, 16]          36,928
+              ReLU-6           [-1, 64, 16, 16]               0
+         MaxPool2d-7             [-1, 64, 8, 8]               0
+           Dropout-8             [-1, 64, 8, 8]               0
+           Flatten-9                 [-1, 4096]               0
+           Linear-10                 [-1, 1024]       4,195,328
+             ReLU-11                 [-1, 1024]               0
+          Dropout-12                 [-1, 1024]               0
+           Linear-13                   [-1, 10]          10,250
+================================================================
+Total params: 4,244,298
+Trainable params: 4,244,298
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.01
+Forward/backward pass size (MB): 1.62
+Params size (MB): 16.19
+Estimated Total Size (MB): 17.82
+----------------------------------------------------------------
+None
+
+Epoch 4/128 loss: 0.6559 - acc: 0.7692 - val_loss: 0.8792 - val_acc: 0.7051
+Epoch 5/128 loss: 0.4967 - acc: 0.8238 - val_loss: 0.9092 - val_acc: 0.7125
 ```
