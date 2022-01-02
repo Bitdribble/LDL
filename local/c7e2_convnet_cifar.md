@@ -2,6 +2,7 @@
 
 ### Experiment 1
 
+```
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
@@ -29,3 +30,4 @@ Estimated Total Size (MB): 0.60
 Epoch 23/128 loss: 0.2615 - acc: 0.9141 - val_loss: 1.5378 - val_acc: 0.6158
 Epoch 24/128 loss: 0.2459 - acc: 0.9193 - val_loss: 1.5945 - val_acc: 0.6204
 Epoch 25/128 loss: 0.2377 - acc: 0.9218 - val_loss: 1.6303 - val_acc: 0.6121
+```
