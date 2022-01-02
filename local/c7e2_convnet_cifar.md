@@ -193,4 +193,33 @@ Dropout of `0.3`
 ```
 Epoch 10/128 loss: 0.5336 - acc: 0.8152 - val_loss: 0.7749 - val_acc: 0.7418
 Epoch 11/128 loss: 0.4811 - acc: 0.8330 - val_loss: 0.7913 - val_acc: 0.7407
+Epoch 64/128 loss: 0.2042 - acc: 0.9437 - val_loss: 1.2742 - val_acc: 0.7449
+Epoch 65/128 loss: 0.1929 - acc: 0.9476 - val_loss: 1.5079 - val_acc: 0.7469
+```
+
+Dropout of `0.4`
+
+```
+Epoch 5/128 loss: 0.9595 - acc: 0.6638 - val_loss: 0.8867 - val_acc: 0.7014
+Epoch 6/128 loss: 0.8859 - acc: 0.6886 - val_loss: 0.8367 - val_acc: 0.7070
+Epoch 10/128 loss: 0.7226 - acc: 0.7514 - val_loss: 0.7811 - val_acc: 0.7344
+Epoch 11/128 loss: 0.6888 - acc: 0.7618 - val_loss: 0.7507 - val_acc: 0.7444
+Epoch 20/128 loss: 0.5205 - acc: 0.8234 - val_loss: 0.7461 - val_acc: 0.7520
+Epoch 21/128 loss: 0.5144 - acc: 0.8263 - val_loss: 0.7415 - val_acc: 0.7543
+Epoch 41/128 loss: 0.3789 - acc: 0.8787 - val_loss: 0.8186 - val_acc: 0.7577
+Epoch 42/128 loss: 0.3791 - acc: 0.8765 - val_loss: 0.8730 - val_acc: 0.7632
+Epoch 43/128 loss: 0.3824 - acc: 0.8790 - val_loss: 0.8162 - val_acc: 0.7573
+Epoch 70/128 loss: 0.3386 - acc: 0.8971 - val_loss: 0.9054 - val_acc: 0.7645
+Epoch 71/128 loss: 0.3382 - acc: 0.8987 - val_loss: 0.8515 - val_acc: 0.7554
+Epoch 72/128 loss: 0.3325 - acc: 0.8996 - val_loss: 0.8278 - val_acc: 0.7611
+Epoch 73/128 loss: 0.3313 - acc: 0.8995 - val_loss: 0.8371 - val_acc: 0.7574
+```
+
+Dropout of `0.5` is worst than `0.4`.
+
+```
+Epoch 5/128 loss: 1.0947 - acc: 0.6157 - val_loss: 0.9741 - val_acc: 0.6735
+Epoch 6/128 loss: 1.0424 - acc: 0.6361 - val_loss: 0.9183 - val_acc: 0.6936
+Epoch 21/128 loss: 0.7904 - acc: 0.7289 - val_loss: 0.7507 - val_acc: 0.7515
+Epoch 22/128 loss: 0.7769 - acc: 0.7343 - val_loss: 0.7422 - val_acc: 0.7503
 ```
