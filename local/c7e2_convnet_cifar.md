@@ -103,5 +103,37 @@ None
 
 Epoch 4/128 loss: 0.5982 - acc: 0.7908 - val_loss: 0.9434 - val_acc: 0.6918
 Epoch 5/128 loss: 0.3960 - acc: 0.8631 - val_loss: 1.0731 - val_acc: 0.6903
+...
+Epoch 35/128 loss: 0.0540 - acc: 0.9878 - val_loss: 4.8059 - val_acc: 0.6837
+Epoch 36/128 loss: 0.0484 - acc: 0.9884 - val_loss: 4.6184 - val_acc: 0.6921
+```
 
+### Experiment 4
+
+Add L2 weight decay `1e-5` - still overfitting
+```
+Epoch 15/128 loss: 0.0747 - acc: 0.9767 - val_loss: 2.3621 - val_acc: 0.6815
+Epoch 16/128 loss: 0.0784 - acc: 0.9754 - val_loss: 2.2545 - val_acc: 0.6838
+```
+
+Add L2 weight decay `1e-4` - still overfitting
+```
+Epoch 32/128 loss: 0.0945 - acc: 0.9685 - val_loss: 2.0144 - val_acc: 0.6629
+Epoch 33/128 loss: 0.0942 - acc: 0.9692 - val_loss: 2.0850 - val_acc: 0.6707
+```
+
+Add L2 weight decay `1e-3`
+```
+Epoch 6/128 loss: 0.6351 - acc: 0.7768 - val_loss: 0.8329 - val_acc: 0.7095
+Epoch 7/128 loss: 0.5773 - acc: 0.7997 - val_loss: 0.8730 - val_acc: 0.7108
+Epoch 8/128 loss: 0.5352 - acc: 0.8133 - val_loss: 0.8649 - val_acc: 0.7112
+Epoch 9/128 loss: 0.4935 - acc: 0.8269 - val_loss: 0.8843 - val_acc: 0.7149
+Epoch 23/128 loss: 0.2850 - acc: 0.9006 - val_loss: 1.1244 - val_acc: 0.7007
+Epoch 24/128 loss: 0.2770 - acc: 0.9029 - val_loss: 1.0324 - val_acc: 0.7118
+```
+
+Add L2 weight decay `1e-2`
+```
+Epoch 6/128 loss: 1.0240 - acc: 0.6411 - val_loss: 1.0313 - val_acc: 0.6299
+Epoch 7/128 loss: 1.0029 - acc: 0.6486 - val_loss: 1.0089 - val_acc: 0.6446
 ```
