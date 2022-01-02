@@ -142,7 +142,7 @@ Epoch 118/128 loss: 0.8976 - acc: 0.6894 - val_loss: 0.9510 - val_acc: 0.6744
 
 ### Experiment 5
 
-No L2 loss, droout of `0.1`.
+No L2 loss, dropout of `0.1`.
 
 ```
 ----------------------------------------------------------------
