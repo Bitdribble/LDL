@@ -175,4 +175,22 @@ None
 
 Epoch 4/128 loss: 0.6559 - acc: 0.7692 - val_loss: 0.8792 - val_acc: 0.7051
 Epoch 5/128 loss: 0.4967 - acc: 0.8238 - val_loss: 0.9092 - val_acc: 0.7125
+Epoch 17/128 loss: 0.1146 - acc: 0.9654 - val_loss: 1.7004 - val_acc: 0.7104
+Epoch 18/128 loss: 0.1057 - acc: 0.9676 - val_loss: 1.8482 - val_acc: 0.7115
+```
+
+Dropout of `0.2`.
+
+```
+Epoch 4/128 loss: 0.7960 - acc: 0.7221 - val_loss: 0.8531 - val_acc: 0.7034
+Epoch 5/128 loss: 0.6733 - acc: 0.7649 - val_loss: 0.8295 - val_acc: 0.7192
+Epoch 12/128 loss: 0.2467 - acc: 0.9175 - val_loss: 1.0500 - val_acc: 0.7359
+Epoch 13/128 loss: 0.2193 - acc: 0.9277 - val_loss: 1.1191 - val_acc: 0.7307
+```
+
+Dropout of `0.3`
+
+```
+Epoch 10/128 loss: 0.5336 - acc: 0.8152 - val_loss: 0.7749 - val_acc: 0.7418
+Epoch 11/128 loss: 0.4811 - acc: 0.8330 - val_loss: 0.7913 - val_acc: 0.7407
 ```
