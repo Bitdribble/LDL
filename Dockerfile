@@ -46,7 +46,7 @@ RUN apt-get update; apt-get install -y \
 
 # Torch is large, pip runs out of memory w/o --no-cache-dir
 # so preinstall torch
-RUN pip3 install --default-timeout=300 --verbose --no-cache-dir torch==1.9.0
+RUN pip3 install --default-timeout=300 --verbose --no-cache-dir torch==1.10.1
 
 # Install the other requirements
 COPY requirements.txt /tmp
