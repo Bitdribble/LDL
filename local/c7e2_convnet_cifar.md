@@ -394,4 +394,9 @@ Epoch 19/128 loss: 0.6975 - acc: 0.7588 - val_loss: 0.7449 - val_acc: 0.7444
 Epoch 31/128 loss: 0.5868 - acc: 0.7993 - val_loss: 0.7268 - val_acc: 0.7598
 Epoch 32/128 loss: 0.5723 - acc: 0.8059 - val_loss: 0.7468 - val_acc: 0.7498
 Epoch 33/128 loss: 0.5728 - acc: 0.8076 - val_loss: 0.7365 - val_acc: 0.7497
+Epoch 63/128 loss: 0.4539 - acc: 0.8523 - val_loss: 0.7841 - val_acc: 0.7638
+Epoch 64/128 loss: 0.4536 - acc: 0.8510 - val_loss: 0.7778 - val_acc: 0.7673
+Epoch 65/128 loss: 0.4383 - acc: 0.8557 - val_loss: 0.7657 - val_acc: 0.7653
+Epoch 120/128 loss: 0.3808 - acc: 0.8823 - val_loss: 0.8550 - val_acc: 0.7584
+Epoch 121/128 loss: 0.3802 - acc: 0.8809 - val_loss: 0.8441 - val_acc: 0.7626
 ```
