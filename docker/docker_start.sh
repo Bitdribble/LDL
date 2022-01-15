@@ -3,7 +3,7 @@
 DOCKER_CONTAINER_NAME=ldl
 DOCKER_IMAGE=ldl
 DOCKER_HOSTNAME=ldl
-WORKING_DIR=/build/LDL
+WORKING_DIR=/build/ldl
 # $USER is set up by the shell
 USER_ID=$(id -u)
 GRP=$(id -g -n)
