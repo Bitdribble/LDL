@@ -143,10 +143,10 @@ Unzip it into the `data/coco/` directory so the path to the unzipped directory i
 ### Andrei's additions
 * To run the Jupyter notebooks on Colab, add the following to the top of your Jupyter notebook:
 ```
-!rm -rf LDL
-!git clone https://github.com/Bitdribble/LDL.git
-%cd /content/LDL
+!rm -rf ldl
+!git clone https://github.com/Bitdribble/ldl.git
+%cd /content/ldl
 %pip install -r colab_requirements.txt
-%cd /content/LDL/<subfolder>
+%cd /content/ldl/<subfolder>
 
 ```
